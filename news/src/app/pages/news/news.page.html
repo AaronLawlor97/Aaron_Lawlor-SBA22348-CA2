@@ -1,13 +1,10 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>news</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">news</ion-title>
-    </ion-toolbar>
+<ion-header>
+  <ion-title>News</ion-title>
   </ion-header>
-</ion-content>
+  <ion-content class="ion-padding">
+  <ion-button expand="full" (click)="opennewsdetails()">Go to Details with function</ion-button>
+  <ion-button expand="full" routerLink="/tabs/news/42" routerDirection="forward">Go to Details with link</ion-button>
+  <ion-button expand="full" (click)="goToSports()">Switch to Sports</ion-button>
+  </ion-content>
+  
+  

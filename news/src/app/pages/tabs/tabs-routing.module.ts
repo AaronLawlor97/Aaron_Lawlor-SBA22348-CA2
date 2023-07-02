@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
+import { NewsDetailsPageModule } from '../news-details/news-details.module';
 
 const routes: Routes = [
     {
@@ -15,17 +16,27 @@ const routes: Routes = [
               path: '',
               loadChildren: () => import('../news/news.module').then( m => m.NewsPageModule)
             },
+            {
+              path: ':id',
+              loadChildren: () => import('../news-details/news-details.module').then( m => m.NewsDetailsPageModule)
+            }
           ]
         },
+
         {
           path: 'sports',
           children: [
             {
               path: '',
               loadChildren: () => import('../sports/sports.module').then( m => m.SportsPageModule)
+            },
+            {
+              path: ':id',
+              loadChildren: () => import('../sports-details/sports-details.module').then( m => m.SportsDetailsPageModule)
             }
           ]
-        },
+        }
+        ,
         
       ]
     },
