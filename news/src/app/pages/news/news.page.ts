@@ -1,24 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavController } from '@ionic/angular';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
-selector: 'app-news',
-templateUrl: './news.page.html',
-styleUrls: ['./news.page.scss'],   
+  selector: 'app-news',
+  templateUrl: './news.page.html',
+  styleUrls: ['./news.page.scss'],
 })
 export class NewsPage implements OnInit {
-constructor(private navController: NavController, private router: Router) { }
-	ngOnInit() {  
-	}
-opennewsdetails()
-{
-// Both of these would work!
-// But the standard Router is recommended.
-// this.navController.navigateForward(`/tabs/News/42`);
-this.router.navigateByUrl(`/tabs/news/42`);  
-}
-goToSports() {
-this.navController.navigateRoot(`/tabs/sports`) 
-	}
-}
+  news: Observable<any> | undefined;
 
+  constructor(private router: Router, private http: HttpClient) { }
+
+  ngOnInit() {
+    this.news = this.http.get('https://newsapi.org/v2/top-headlines?country=ie&apiKey=c55dc7fee88f4c21a87a37bba674415d');
+    this.news.subscribe(data => {
+      console.log('my data:', data);
+    });
+  }
+}
