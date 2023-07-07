@@ -35,6 +35,19 @@ const routes: Routes = [
               loadChildren: () => import('../sports-details/sports-details.module').then( m => m.SportsDetailsPageModule)
             }
           ]
+        },
+        {
+          path: 'tech',
+          children: [
+            {
+              path: '',
+              loadChildren: () => import('../tech/tech.module').then( m => m.TechPageModule)
+            },
+            {
+              path: ':id',
+              loadChildren: () => import('../tech-details/tech-details.module').then( m => m.TechDetailsPageModule)
+            }
+          ]
         }
         ,
         

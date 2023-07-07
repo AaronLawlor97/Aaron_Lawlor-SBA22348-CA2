@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sports-details',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sports-details.page.scss'],
 })
 export class SportsDetailsPage implements OnInit {
+  sports: any;
 
-  constructor() { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.sports = history.state;
   }
-
 }
+
+
+

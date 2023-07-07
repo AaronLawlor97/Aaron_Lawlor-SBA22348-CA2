@@ -1,11 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-  <ion-buttons slot="start">
-  <ion-back-button default href="/tabs/sports"></ion-back-button>
-  </ion-buttons>
-  <ion-title>Details</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" defaultHref="/tabs/sports">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Top 10 Sports Headlines</ion-title>
   </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-  </ion-content>
-  
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="sports">
+    <ion-card-header>
+      <ion-card-title>{{ sports.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ sports.description }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

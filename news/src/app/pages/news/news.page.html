@@ -1,8 +1,9 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>News</ion-title>
+    <ion-title>Top 10 Headlines</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content class="ion-padding">
   <ion-list>
     <ion-item button detail lines="inset" *ngFor="let news of (news | async)?.results" (click)="showNews(news)">
@@ -10,4 +11,5 @@
     </ion-item>
   </ion-list>
 </ion-content>
+
 

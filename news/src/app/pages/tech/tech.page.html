@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Top 10 Tech Headlines</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item button detail lines="inset" *ngFor="let tech of (tech | async)?.results" (click)="showTech(tech)">
+      {{ tech.title }}
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+

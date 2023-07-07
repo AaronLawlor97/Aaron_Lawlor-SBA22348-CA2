@@ -1,19 +1,19 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start" defaultHref="/tabs/news">
+    <ion-buttons slot="start" defaultHref="/tabs/tech">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Top 10 Headlines</ion-title>
+    <ion-title>Top 10 Tech Headlines</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card *ngIf="news">
+  <ion-card *ngIf="tech">
     <ion-card-header>
-      <ion-card-title>{{ news.title }}</ion-card-title>
+      <ion-card-title>{{ tech.title }}</ion-card-title>
     </ion-card-header>
       <ion-card-content>
-        <p>{{ news.description }}</p>
+        <p>{{ tech.description }}</p>
       </ion-card-content>
   </ion-card>
 </ion-content>
